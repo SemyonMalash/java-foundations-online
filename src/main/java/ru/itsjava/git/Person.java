@@ -7,18 +7,14 @@ import lombok.Data;
 @AllArgsConstructor
 public class Person {
 
-   private String name;
-   private int age;
+    private String name;
+    private int age;
 
     public void birthday() {
-        age += 1;
+        age++;
     }
 
     public boolean takeBeer() {
-        if (age > 18) {
-            return true;
-        } else {
-            return false;
-        }
+        return age > 18;
     }
 }

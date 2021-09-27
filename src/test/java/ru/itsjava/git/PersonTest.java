@@ -1,8 +1,8 @@
 package ru.itsjava.git;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -47,7 +47,16 @@ public class PersonTest {
         person.takeBeer();
         person2.takeBeer();
 
-        assertEquals(true, person.takeBeer());
-        assertEquals(false, person2.takeBeer());
+        //assertAll();
+        assertTrue(person.takeBeer());
+        assertFalse(person2.takeBeer());
+    }
+
+    @Test
+    public void shouldCorrectlyComparePersons() {
+        Person person = new Person(DEFAULT_NAME, DEFAULT_AGE);
+        Person person2 = new Person(DEFAULT_NAME, DEFAULT_AGE);
+
+        assertEquals(person, person2);
     }
 }

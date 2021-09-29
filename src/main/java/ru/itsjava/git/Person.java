@@ -11,7 +11,13 @@ public class Person {
     private int age;
 
     public void birthday() {
+
+        printNothing();
         age++;
+    }
+
+    private void printNothing() {
+        System.out.println();
     }
 
     public boolean takeBeer() {

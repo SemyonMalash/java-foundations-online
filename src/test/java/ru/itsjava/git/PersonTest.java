@@ -12,6 +12,7 @@ public class PersonTest {
     public static final String DEFAULT_NAME = "Петя";
     public static final int DEFAULT_AGE = 20;
     public static final String NEW_NAME = "Вася";
+    public static final String CONST = "CONST";
 
     @DisplayName("Корректно создаваться конструктором")
     @Test
@@ -46,7 +47,6 @@ public class PersonTest {
 
         person.takeBeer();
         person2.takeBeer();
-
         //assertAll();
         assertTrue(person.takeBeer());
         assertFalse(person2.takeBeer());
@@ -58,5 +58,7 @@ public class PersonTest {
         Person person2 = new Person(DEFAULT_NAME, DEFAULT_AGE);
 
         assertEquals(person, person2);
+
+
     }
 }

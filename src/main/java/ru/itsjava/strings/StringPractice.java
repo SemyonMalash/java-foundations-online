@@ -27,13 +27,26 @@ public class StringPractice {
         System.out.println(strs[1]);
 
 
-
         StringBuilder stringBuilderStr = new StringBuilder(str);
         for (int i = 0; i < 1_000_000; i++) {
             stringBuilderStr.append('!');
         }
 
         System.out.println(stringBuilderStr.toString());
-    }
 
+        // приводит строку к верхнему регистру
+        System.out.println("str.toUpperCase() = " + str.toUpperCase());
+
+        // преобразует строку в массив символов
+        char[] strChar = str.toCharArray();
+
+        for (int i = 0; i < strChar.length; i++) {
+            System.out.println(strChar[i]);
+        }
+
+        // меняет последовательность символов
+        StringBuilder reverseStr = new StringBuilder(str);
+        System.out.println("reverseStr.reverse() = " + reverseStr.reverse());
+
+    }
 }

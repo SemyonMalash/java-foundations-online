@@ -38,5 +38,11 @@ public class ExceptionPractice {
             ce.printStackTrace();
         }
 
+        Person person = new Person();
+
+        System.out.println("person.ageCorrect() = " + person.ageCorrect(180));
+        System.out.println("person.ageCorrect() = " + person.ageCorrect(-5));
+        System.out.println("person.ageCorrect() = " + person.ageCorrect(50));
+
     }
 }

@@ -48,5 +48,11 @@ public class StringPractice {
         StringBuilder reverseStr = new StringBuilder(str);
         System.out.println("reverseStr.reverse() = " + reverseStr.reverse());
 
+
+        String str1 = "Semyon";
+        String str2 = "Semyon";
+
+        str2 = "Semyon + 1";
+
     }
 }

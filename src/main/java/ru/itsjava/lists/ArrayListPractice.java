@@ -13,7 +13,7 @@ public class ArrayListPractice {
         watchesList.add(seiko);
         watchesList.add(gShock);
 
-        for (Watch elemWatch: watchesList) {
+        for (Watch elemWatch : watchesList) {
             System.out.println(elemWatch);
         }
 
@@ -21,7 +21,7 @@ public class ArrayListPractice {
         watchesList.remove(seiko);
 
         System.out.print("List: ");
-        for (Watch elemWatch: watchesList) {
+        for (Watch elemWatch : watchesList) {
             System.out.print(elemWatch + " ");
         }
         System.out.println();
@@ -56,9 +56,55 @@ public class ArrayListPractice {
 
         Watch vitaliyWatch = new Watch("Seiko", "Vitaliy", 20_000.0);
 
-        watchesList.add(1,vitaliyWatch);
+        watchesList.add(1, vitaliyWatch);
 
         System.out.println(watchesList);
+
+
+        List<Book> booksList = new ArrayList<>();
+
+        List<Book> booksList2 = new ArrayList<>();
+
+        Book book = new Book("Book");
+        Book book2 = new Book("Book2");
+
+
+        for (int i = 0; i < 20; i++) {
+            booksList2.add(book);
+        }
+
+        System.out.println("booksList2.get(0) = " + booksList2.get(0));
+        System.out.println("booksList2.get(19) = " + booksList2.get(19));
+
+        for (int i = 0; i < 5; i++) {
+            booksList2.add(book);
+        }
+
+        booksList2.add(5, book2);
+        booksList2.set(2, book2);
+        booksList2.remove(5);
+
+        booksList2.add(6, book2);
+        booksList2.set(0, book2);
+        booksList2.remove(6);
+
+        System.out.println(booksList2);
+
+        booksList.addAll(booksList2);
+        System.out.println(booksList);
+
+        booksList.remove(book);
+        System.out.println(booksList);
+
+        booksList.remove(0);
+        System.out.println(booksList);
+
+        System.out.println("booksList.contains(book2) = " + booksList.contains(book2));
+
+        System.out.print("List: ");
+        for (Book bookElem : booksList) {
+            System.out.print(bookElem + " ");
+        }
 
     }
 

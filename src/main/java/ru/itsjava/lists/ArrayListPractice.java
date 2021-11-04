@@ -65,8 +65,9 @@ public class ArrayListPractice {
 
         List<Book> booksList2 = new ArrayList<>();
 
-        Book book = new Book("Book");
-        Book book2 = new Book("Book2");
+        Book book = new Book("Book", "Иван");
+        Book book2 = new Book("Book2", "Мария");
+        Book java = new Book("Java", "123");
 
 
         for (int i = 0; i < 20; i++) {
@@ -106,12 +107,66 @@ public class ArrayListPractice {
             System.out.print(bookElem + " ");
         }
 
+        System.out.println();
+
+        booksList.add(5, java);
+        booksList.add(10, java);
+        booksList.add(16, java);
+        booksList.add(7, java);
+
+        System.out.println("booksList = " + booksList);
+
+        for (int i = 0; i < booksList.size(); i++) {
+            if (i % 3 == 0) {
+                System.out.println(booksList.get(i));
+            }
+        }
+
+        int javaCount = 0;
+        for (int i = 0; i < booksList.size(); i++) {
+            if (booksList.get(i).equals(java)) {
+                javaCount++;
+            }
+        }
+        System.out.println("Количество книг Java: " + javaCount);
+
+
+        int bookCount = 0;
+        for (int i = 0; i < booksList.size(); i++) {
+            if (bookCount < 3) {
+                bookCount++;
+            } else System.out.println(booksList.get(i));
+        }
+
+        System.out.println();
+
+        int count = 0;
+        for (int i = 0; i < booksList.size(); i++) {
+            if (count < 2 && booksList.get(i).equals(java)) {
+                count++;
+            } else System.out.println(booksList.get(i));
+        }
+
+        System.out.println("__________");
+
+
+        for (int i = 0; i < booksList.size(); i++) {
+            if (booksList.get(i).getAuthor().length() % 3 == 0) {
+                System.out.println(booksList.get(i));
+                break;
+            }
+        }
+
+        System.out.println();
+
+
+        for (int i = 0; i < booksList.size(); i++) {
+            if (booksList.get(i).getAuthor().length() % 3 == 0) {
+                System.out.println(booksList.get(i));
+            }
+        }
     }
-
 }
-
-
-
 
 
 

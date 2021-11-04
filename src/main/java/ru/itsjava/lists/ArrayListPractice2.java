@@ -59,5 +59,30 @@ public class ArrayListPractice2 {
         }
         System.out.println();
 
+        Person person = new Person("Николай", 20, true);
+        Person person1 = new Person("Иван", 20, true);
+        Person person2 = new Person("Кирилл", 16, true);
+        Person person3 = new Person("Мария", 22, false);
+        Person person4 = new Person("Мария", 30, false);
+        Person person5 = new Person("Мария", 50, false);
+
+        List<Person> persons = new ArrayList<>(Arrays.asList(person, person1, person2, person3, person4, person5));
+
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).getName().charAt(0) == 'Н' && persons.get(i).isMale() == true
+                    && persons.get(i).getAge() > 18 && persons.get(i).getAge() < 27) {
+                System.out.println(persons.get(i));
+            }
+        }
+
+        int count = 0;
+        int sum = 0;
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).isMale() == false) {
+                count++;
+                sum += persons.get(i).getAge();
+            }
+        }
+        System.out.println("Средний возраст всех женщин = " + sum / count);
     }
 }

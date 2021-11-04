@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
-public class Book {
+public class Person {
 
     private final String name;
-    private final String author;
-
+    private final int age;
+    private final boolean isMale;
 }

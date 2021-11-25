@@ -21,7 +21,7 @@ public class MyArrayListPractice {
         list.add("321");
         list.add("321");
         list.add("321");
-        list.add("321");
+        list.add("322");
         list.add("321");
         list.add("321");
         list.add("321");
@@ -31,11 +31,15 @@ public class MyArrayListPractice {
         list.add("321");
 
         System.out.println("list.toString() = " + list.toString());
+
+        System.out.println("list.indexOf(322) = " + list.indexOf("322"));
 
         list.clear();
 
         System.out.println("list.isEmpty() = " + list.isEmpty());
 
         System.out.println("list.toString() = " + list.toString());
+
+
     }
 }

@@ -64,7 +64,20 @@ public class MyArrayList {
     }
 
     public int indexOf(Object o) {
-        return 0;
+        if (o == null) {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < array.length; i++) {
+                if (o.equals(array[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {

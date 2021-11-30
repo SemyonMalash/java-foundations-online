@@ -45,6 +45,7 @@ public class MyArrayList {
         for (int i = 0; i < realSize; i++) {
             array[i] = null;
         }
+        realSize = 0;
     }
 
     public Object get(int index) {

@@ -1,4 +1,4 @@
-package ru.itsjava.lists;
+package ru.itsjava.collections.lists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,5 +84,7 @@ public class ArrayListPractice2 {
             }
         }
         System.out.println("Средний возраст всех женщин = " + sum / count);
+
+        List<Book> books;
     }
 }

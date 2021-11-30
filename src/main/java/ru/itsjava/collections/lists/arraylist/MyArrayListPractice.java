@@ -40,6 +40,8 @@ public class MyArrayListPractice {
 
         System.out.println("list.toString() = " + list.toString());
 
+        System.out.println("list.size() = " + list.size());
+
 
     }
 }

@@ -1,14 +1,10 @@
 package ru.itsjava.collections.lists.arraylist;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class MyArrayList {
 
     private static final int DEFAULT_CAPACITY = 10;
     private int realSize;
     private Object[] array;
-
 
     public MyArrayList() {
         array = new Object[DEFAULT_CAPACITY];
@@ -38,7 +34,24 @@ public class MyArrayList {
     }
 
     public boolean remove(Object o) {
-        return false;
+        int delIndex = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null && array[i].equals(o)) {
+                delIndex = i;
+                break;
+            }
+        }
+
+        if (array.length - 1 - delIndex >= 0) {
+            System.arraycopy(array, delIndex + 1, array, delIndex, array.length - 1 - delIndex);
+        }
+
+        if (delIndex == -1) {
+            return false;
+        } else {
+            realSize--;
+            return true;
+        }
     }
 
     public void clear() {
@@ -49,19 +62,52 @@ public class MyArrayList {
     }
 
     public Object get(int index) {
-        return null;
+        checkIndex(index);
+
+        Object resElement = array[index];
+        return resElement;
     }
 
-    public Object set(int index, Object element) {
-        return null;
+    public Object set(int index, Object o) {
+        checkIndex(index);
+
+        array[index] = o;
+        return true;
     }
 
-    public void add(int index, Object element) {
-
+    public void add(int index, Object o) {
+        if (index > -1 && index < array.length + 100) {
+            if (realSize == array.length || index >= array.length) {
+                Object[] resArray = new Object[array.length + 100];
+                System.arraycopy(array, 0, resArray, 0, array.length);
+                array = resArray;
+            }
+            array[index] = o;
+        } else throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
     }
 
     public Object remove(int index) {
-        return null;
+        checkIndex(index);
+
+        Object resElement = array[index];
+        if (array.length - 1 - index >= 0) {
+            System.arraycopy(array, index + 1, array, index, array.length - 1 - index);
+        }
+        realSize--;
+        return resElement;
+    }
+
+    private void checkIndex(int index) {
+        if (!isCorrectIndex(index)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if ((index > -1) && (index < array.length)) {
+            return true;
+        }
+        return false;
     }
 
     public int indexOf(Object o) {
@@ -82,7 +128,20 @@ public class MyArrayList {
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        if (o == null) {
+            for (int i = array.length - 1; i >= 0; i--) {
+                if (array[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = array.length - 1; i >= 0; i--) {
+                if (o.equals(array[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -90,7 +149,7 @@ public class MyArrayList {
 
         StringBuilder stringBuilder = new StringBuilder("MyArrayList { ");
 
-        for (int i = 0; i < realSize; i++) {
+        for (int i = 0; i < array.length; i++) {
             stringBuilder.append(array[i]).append(' ');
         }
         stringBuilder.append("}");

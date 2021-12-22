@@ -42,6 +42,30 @@ public class MyArrayListPractice {
 
         System.out.println("list.size() = " + list.size());
 
+        System.out.println("list.add(\"322\") = " + list.add("322"));
 
+        System.out.println("list.contains(\"322\") = " + list.contains("322"));
+        System.out.println("list.contains(\"321\") = " + list.contains("321"));
+
+        list.add("311");
+        list.add("312");
+        list.add("312");
+        System.out.println(list);
+
+        list.remove(0);
+        list.remove("311");
+        System.out.println(list);
+        System.out.println("list.lastIndexOf(\"312\") = " + list.lastIndexOf("312"));
+
+        list.add("333");
+        System.out.println(list);
+        System.out.println("list.get(2) = " + list.get(2));
+
+        list.add(101, 555555);
+        list.add(102, 555555);
+        System.out.println(list);
+
+        System.out.println("list.set(5, 777) = " + list.set(5, 777));
+        System.out.println(list);
     }
 }

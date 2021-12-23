@@ -61,11 +61,13 @@ public class MyArrayListPractice {
         System.out.println(list);
         System.out.println("list.get(2) = " + list.get(2));
 
-        list.add(101, 555555);
-        list.add(102, 555555);
+        list.add(3, 555555);
+        list.add(4, 555555);
         System.out.println(list);
 
         System.out.println("list.set(5, 777) = " + list.set(5, 777));
         System.out.println(list);
+
+        System.out.println("list.size() = " + list.size());
     }
 }

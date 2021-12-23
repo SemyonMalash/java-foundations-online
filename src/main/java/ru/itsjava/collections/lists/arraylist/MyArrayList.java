@@ -62,7 +62,7 @@ public class MyArrayList {
     }
 
     public Object get(int index) {
-        checkIndex(index);
+
 
         Object resElement = array[index];
         return resElement;
@@ -72,18 +72,15 @@ public class MyArrayList {
         checkIndex(index);
 
         array[index] = o;
+        realSize++;
         return true;
     }
 
     public void add(int index, Object o) {
-        if (index > -1 && index < array.length + 100) {
-            if (realSize == array.length || index >= array.length) {
-                Object[] resArray = new Object[array.length + 100];
-                System.arraycopy(array, 0, resArray, 0, array.length);
-                array = resArray;
-            }
-            array[index] = o;
-        } else throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        checkIndex(index);
+
+        array[index] = o;
+        realSize++;
     }
 
     public Object remove(int index) {

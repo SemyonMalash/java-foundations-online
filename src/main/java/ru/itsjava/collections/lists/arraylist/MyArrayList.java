@@ -79,6 +79,12 @@ public class MyArrayList {
     public void add(int index, Object o) {
         checkIndex(index);
 
+        if (realSize == array.length) {
+            Object[] resArray = new Object[array.length * 3 / 2 + 1];
+            System.arraycopy(array, 0, resArray, 0, array.length);
+            array = resArray;
+        }
+
         array[index] = o;
         realSize++;
     }

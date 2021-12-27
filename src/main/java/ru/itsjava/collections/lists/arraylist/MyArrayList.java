@@ -35,6 +35,7 @@ public class MyArrayList {
 
     public boolean remove(Object o) {
         int delIndex = -1;
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null && array[i].equals(o)) {
                 delIndex = i;
@@ -45,7 +46,6 @@ public class MyArrayList {
         if (array.length - 1 - delIndex >= 0) {
             System.arraycopy(array, delIndex + 1, array, delIndex, array.length - 1 - delIndex);
         }
-
         if (delIndex == -1) {
             return false;
         } else {
@@ -62,15 +62,12 @@ public class MyArrayList {
     }
 
     public Object get(int index) {
-
-
         Object resElement = array[index];
         return resElement;
     }
 
     public Object set(int index, Object o) {
         checkIndex(index);
-
         array[index] = o;
         realSize++;
         return true;
@@ -84,7 +81,6 @@ public class MyArrayList {
             System.arraycopy(array, 0, resArray, 0, array.length);
             array = resArray;
         }
-
         array[index] = o;
         realSize++;
     }
@@ -149,7 +145,6 @@ public class MyArrayList {
 
     @Override
     public String toString() {
-
         StringBuilder stringBuilder = new StringBuilder("MyArrayList { ");
 
         for (int i = 0; i < array.length; i++) {

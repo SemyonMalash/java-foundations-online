@@ -69,22 +69,21 @@ public class MyArrayList {
         checkIndex(index);
 
         array[index] = o;
-        realSize++;
         return true;
     }
 
     public void add(int index, Object o) {
         checkIndex(index);
 
-        if (index == 0) {
-            System.arraycopy(array, 0, array, 1, array.length - 1);
-        } else {
-            System.arraycopy(array, index - 1, array, index, array.length - index);
-        }
         if (realSize == array.length) {
             Object[] resArray = new Object[array.length * 3 / 2 + 1];
             System.arraycopy(array, 0, resArray, 0, array.length);
             array = resArray;
+        }
+        if (index == 0) {
+            System.arraycopy(array, 0, array, 1, array.length - 1);
+        } else {
+            System.arraycopy(array, index - 1, array, index, array.length - index);
         }
         array[index] = o;
         realSize++;

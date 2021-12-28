@@ -42,8 +42,9 @@ public class MyArrayListTest {
         MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT_2);
+        list.add(ELEMENT_2);
 
-        assertEquals(1, list.lastIndexOf(ELEMENT_2));
+        assertEquals(2, list.lastIndexOf(ELEMENT_2));
     }
 
     @Test

@@ -13,5 +13,15 @@ public class SetPractice {
 
         Set<Man> manSet = new HashSet<>(Arrays.asList(andrey, maxim, vitya));
         System.out.println("manSet = " + manSet);
+
+        Fruit apple = new Fruit("Яблоко", 50);
+        Fruit banana = new Fruit("Банан", 100);
+
+        Set<Fruit> fruitSet = new HashSet<>(Arrays.asList(apple, banana));
+        System.out.println("fruitSet = " + fruitSet);
+        System.out.println("fruitSet.add(apple) = " + fruitSet.add(apple));
+        System.out.println("fruitSet = " + fruitSet);
+        System.out.println("fruitSet.remove(apple) = " + fruitSet.remove(apple));
+        System.out.println("fruitSet = " + fruitSet);
     }
 }

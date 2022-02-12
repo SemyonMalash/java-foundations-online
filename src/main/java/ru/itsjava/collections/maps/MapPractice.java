@@ -35,6 +35,7 @@ public class MapPractice {
 //        men.clear();
 //        System.out.println("men.size() = " + men.size());
 
+
         Map<Man, Fruit> customers = new HashMap<>();
 
         Man ivanov = new Man("Иванов");

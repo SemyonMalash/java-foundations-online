@@ -46,9 +46,9 @@ public class MapPractice {
         Man adubov = new Man("адубов");
 
         Fruit apple = new Fruit("Абрикос", 15);
-        Fruit orange = new Fruit("АРбУз", 20);
+        Fruit orange = new Fruit("Арбуз", 20);
         Fruit banana = new Fruit("Арбуз", 30);
-        Fruit melon = new Fruit("арбуз", 200);
+        Fruit melon = new Fruit("Арбуз", 200);
         Fruit apricot = new Fruit("Дыня", 10);
 
         customers.put(anov, apple);
@@ -86,30 +86,26 @@ public class MapPractice {
         }
         System.out.println(melonCount);
 
+        System.out.println("\"7a\" = " + "7a");
         int watermelonCount = 0;
         for (Map.Entry<Man, Fruit> pair : customers.entrySet()) {
-            if (pair.getValue().getName().equals("Арбуз")) {
+            if (pair.getValue().getName().equals("Арбуз") && watermelonCount < 2) {
                 watermelonCount++;
-            } else {
-                System.out.println(pair.getKey() + " : " + pair.getValue());
+                continue;
             }
-            if (pair.getValue().getName().equals("Арбуз") && watermelonCount > 2) {
-                System.out.println(pair.getKey() + " : " + pair.getValue());
-            }
+            System.out.println(pair.getKey() + " : " + pair.getValue());
         }
 
         System.out.println("__________________________");
 
+        System.out.println("\"7b\" = " + "7b");
         int aCount = 0;
         for (Map.Entry<Man, Fruit> pair : customers.entrySet()) {
-            if (pair.getKey().getName().charAt(0) == 'а') {
+            if (pair.getKey().getName().charAt(0) == 'а' && aCount < 2) {
                 aCount++;
-            } else {
-                System.out.println(pair.getKey() + " : " + pair.getValue());
+                continue;
             }
-            if (pair.getKey().getName().charAt(0) == 'а' && aCount > 2) {
-                System.out.println(pair.getKey() + " : " + pair.getValue());
-            }
+            System.out.println(pair.getKey() + " : " + pair.getValue());
         }
 
         System.out.println("__________________________");
@@ -119,7 +115,7 @@ public class MapPractice {
         System.out.println("__________________________");
 
         for (Map.Entry<Man, Fruit> pair : customers.entrySet()) {
-            if (pair.getValue().getName().equals("Арбуз") || pair.getValue().getName().equals("арбуз") || pair.getValue().getName().equals("АРбУз")) {
+            if (pair.getValue().getName().equalsIgnoreCase("арбуз")) {
                 System.out.println(pair.getKey() + " : " + pair.getValue());
             }
             break;

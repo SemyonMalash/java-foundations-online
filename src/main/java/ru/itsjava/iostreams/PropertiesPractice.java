@@ -20,5 +20,12 @@ public class PropertiesPractice {
         props2.load(inputStream);
 
         System.out.println("props2.getProperty(\"key\") = " + props2.getProperty("key"));
+
+        ClassLoader classLoader1 = PropertiesPractice.class.getClassLoader();
+        InputStream inputStream1 = classLoader1.getResourceAsStream("myapplication.properties");
+        Properties myProperties = new Properties();
+        myProperties.load(inputStream1);
+
+        System.out.println("myProperties.getProperty(Semyon) = " + myProperties.getProperty("Semyon"));
     }
 }

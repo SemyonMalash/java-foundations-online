@@ -3,7 +3,7 @@ package ru.itsjava.threads;
 public class ThreadPractice {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Thread.currentThread().getName() = " + Thread.currentThread().getName());
+//        System.out.println("Thread.currentThread().getName() = " + Thread.currentThread().getName());
 
 //        for (int i = 0; i < 10; i++) {
 //            for (int j = 0; j < 2_000_000_000L; j++) {
@@ -25,21 +25,25 @@ public class ThreadPractice {
         //   A   A   A   A    A
         //     B     B     B        B        B
 
+//        PrinterThread printerThreadA = new PrinterThread("A", 2000L);
+////        PrinterThread printerThreadB = new PrinterThread("B", 3000L);
+//
+//        PrinterRunnable printerRunnable = new PrinterRunnable("B", 3000L);
+//        Thread threadB = new Thread(printerRunnable);
+//
+//        System.out.println("start");
+//
+//        printerThreadA.start();
+//        threadB.start();
+//
+//        threadB.join();
+//
+//        System.out.println("end");
 
-        PrinterThread printerThreadA = new PrinterThread("A", 2000L);
-//        PrinterThread printerThreadB = new PrinterThread("B", 3000L);
+        PrinterThread1 threadA = new PrinterThread1("Привет", 5000L);
+        Thread threadB = new Thread(new PrinterRunnable1("Пока", 5000L));
 
-        PrinterRunnable printerRunnable = new PrinterRunnable("B", 3000L);
-        Thread threadB = new Thread(printerRunnable);
-
-        System.out.println("start");
-
-        printerThreadA.start();
+        threadA.start();
         threadB.start();
-
-        threadB.join();
-
-        System.out.println("end");
-
     }
 }

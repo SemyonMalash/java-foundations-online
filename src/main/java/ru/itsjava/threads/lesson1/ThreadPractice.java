@@ -1,4 +1,4 @@
-package ru.itsjava.threads;
+package ru.itsjava.threads.lesson1;
 
 public class ThreadPractice {
 

@@ -13,13 +13,25 @@ public class SerializationPractice {
 //                new FileOutputStream("src/main/resources/man.out"))) {
 //            outputStream.writeObject(man);
 //        }
+//        try (ObjectInputStream inputStream = new ObjectInputStream(
+//                new FileInputStream("src/main/resources/man.out"))) {
+//            Object obj = inputStream.readObject();
+//            Man man = (Man) obj;
+//            System.out.println("Man = " + man);
+//        }
 
-        try (ObjectInputStream inputStream = new ObjectInputStream(
-                new FileInputStream("src/main/resources/man.out"))) {
+        User user = new User("admin", "admin");
 
+        try(ObjectOutputStream outputStream = new ObjectOutputStream(
+                new FileOutputStream("src/main/resources/user.out"))) {
+            outputStream.writeObject(user);
+        }
+        try(ObjectInputStream inputStream = new ObjectInputStream(
+                new FileInputStream("src/main/resources/user.out"))) {
             Object obj = inputStream.readObject();
-            Man man = (Man) obj;
-            System.out.println("Man = " + man);
+            User user1 = (User) obj;
+            user1.setPassword(user.getPassword());
+            System.out.println("User1 = " + user1);
         }
     }
 }

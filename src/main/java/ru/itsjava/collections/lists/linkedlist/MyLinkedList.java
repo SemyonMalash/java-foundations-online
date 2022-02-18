@@ -22,7 +22,7 @@ public class MyLinkedList {
 
     public boolean contains(Object o) {
         Node curNode = head;
-        while (curNode != null) {
+        while ((curNode != null)) {
             if (o == curNode.getValue()) {
                 return true;
             }
@@ -191,11 +191,30 @@ public class MyLinkedList {
     }
 
     public int indexOf(Object o) {
-        return 0;
+        int index = 0;
+        Node curNode = head;
+        while (curNode != null) {
+            if (curNode.getValue() == o) {
+                return index;
+            }
+            index++;
+            curNode = curNode.getNext();
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        int index = 0;
+        int resIndex = 0;
+        Node curNode = head;
+        while (curNode != null) {
+            if (curNode.getValue() == o) {
+                resIndex = index;
+            }
+            index++;
+            curNode = curNode.getNext();
+        }
+        return resIndex;
     }
 
     @Override

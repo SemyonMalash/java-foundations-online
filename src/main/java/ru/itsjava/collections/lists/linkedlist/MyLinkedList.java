@@ -1,5 +1,7 @@
 package ru.itsjava.collections.lists.linkedlist;
 
+import lombok.val;
+
 public class MyLinkedList {
     private Node head;
 
@@ -22,7 +24,7 @@ public class MyLinkedList {
 
     public boolean contains(Object o) {
         Node curNode = head;
-        while ((curNode != null)) {
+        while (curNode != null) {
             if (o == curNode.getValue()) {
                 return true;
             }
@@ -44,6 +46,27 @@ public class MyLinkedList {
         }
         return true;
     }
+
+    public void add(int index, Object o) {
+        checkIndex(index);
+        Node curNode = head;
+        int indexCount = 0;
+        if (index == 0) {
+            head = new Node(o, curNode);
+        } else {
+            while (curNode != null) {
+                Node prevNode = curNode;
+                curNode = curNode.getNext();
+                indexCount++;
+                if (index == indexCount) {
+                    Node resNode = new Node(o, curNode);
+                    prevNode.setNext(resNode);
+                    break;
+                }
+            }
+        }
+    }
+
 
     //Метод с модификатором доступа public, тип boolean, название remove, параметр тип Object, название o
     public boolean remove(Object o) {
@@ -123,9 +146,6 @@ public class MyLinkedList {
         return true;
     }
 
-    public void add(int index, Object element) {
-    }
-
     // СТРОКА1 -> null
     // СТРОКА1 -> СТРОКА2 -> СТРОКА3 -> null
     //Объявляем метод с модификатором доступа public, тип Object, название remove, параметр тип int, название index
@@ -184,7 +204,7 @@ public class MyLinkedList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index > -1) && (index < size())) {
+        if ((index > -1) && (index <= size())) {
             return true;
         }
         return false;

@@ -11,12 +11,12 @@ public class MyLinkedListPractice {
         new LinkedList<>().clear();
 
         list.add(11);
-        list.add(11);
         list.add(22);
+//        list.add(22);
         list.add(33);
-        list.add(44);
-        list.add(44);
-        list.add(null);
+//        list.add(44);
+//        list.add(44);
+//        list.add(null);
 
         System.out.println("list.get(0) = " + list.get(0));
         System.out.println("list.get(1) = " + list.get(1));
@@ -34,6 +34,10 @@ public class MyLinkedListPractice {
         System.out.println("list.indexOf(null) = " + list.indexOf(null));
 
         System.out.println("list.lastIndexOf(null) = " + list.lastIndexOf(44));
+
+        System.out.println("list.size() = " + list.size());
+        list.add(3,77);
+        System.out.println("list = " + list);
 
 
 //        System.out.println("list.remove(-1) = " + list.remove(-1));

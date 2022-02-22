@@ -1,7 +1,5 @@
 package ru.itsjava.collections.lists.linkedlist;
 
-import lombok.val;
-
 public class MyLinkedList {
     private Node head;
 

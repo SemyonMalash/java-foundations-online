@@ -65,7 +65,7 @@ public class MyArrayListPractice {
 //        list.add(4, 555555);
 //        System.out.println(list);
 //
-//        System.out.println("list.set(5, 777) = " + list.set(5, 777));
+//        System.out.println("list.set(5, 777.txt) = " + list.set(5, 777.txt));
 //        System.out.println(list);
 //
 //        System.out.println("list.size() = " + list.size());

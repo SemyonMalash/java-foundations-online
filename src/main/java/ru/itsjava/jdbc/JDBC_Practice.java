@@ -1,7 +1,6 @@
 package ru.itsjava.jdbc;
 
-import ru.itsjava.jdbc.dao.UserDAO;
-import ru.itsjava.jdbc.dao.UserJdbcImpl;
+//import ru.itsjava.jdbc.dao.UserJdbcImpl;
 
 public class JDBC_Practice {
 //    public static final String DB_URL = "jdbc:MySql://localhost:3306/new_schema?serverTimezone=UTC";
@@ -19,7 +18,7 @@ public class JDBC_Practice {
 //            e.printStackTrace();
 //        }
 
-        UserDAO dao = new UserJdbcImpl();
-        System.out.println(dao.getAgeByUserName("Коля"));
+//        UserDAO dao = new UserJdbcImpl();
+//        System.out.println(dao.getAgeByUserName("Коля"));
     }
 }

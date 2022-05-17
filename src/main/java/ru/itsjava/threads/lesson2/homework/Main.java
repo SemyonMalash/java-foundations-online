@@ -1,6 +1,4 @@
-package ru.itsjava.interfaces.homework;
-
-import java.util.Arrays;
+package ru.itsjava.threads.lesson2.homework;
 
 public class Main {
 

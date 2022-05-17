@@ -1,4 +1,4 @@
-package ru.itsjava.interfaces.homework;
+package ru.itsjava.threads.lesson2.homework;
 
 public interface Talkable {
 
